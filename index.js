@@ -11,7 +11,7 @@ mongoDb();
 const app = express();
 app.use(
   cors({
-    origin: "https://fliperpritam.vercel.app",
+    origin: "https://fliperpritam.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
