@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoDb = require("./Config/Connection");
-const User = require("./models/userSchema");
+
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
@@ -11,7 +11,7 @@ mongoDb();
 const app = express();
 app.use(
   cors({
-    origin: "https://fliperpritam.vercel.app/",
+    origin: "https://fliperpritam.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
