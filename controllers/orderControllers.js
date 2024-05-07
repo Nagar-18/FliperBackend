@@ -41,9 +41,13 @@ const getOrder = asyncHandler(async (req, res) => {
 
 // /api/user?search=piyush
 const allOrder = asyncHandler(async (req, res) => {
-  const users = await Order.find();
-  
-  res.send(users);
+  try {
+    const users = await Order.find();
+
+    res.send(users);
+  } catch (error) {
+    throw new Error("invlaid");
+  }
 });
 
 module.exports = { create, getOrder, allOrder };

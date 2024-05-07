@@ -40,9 +40,15 @@ const getShippingDetails = asyncHandler(async (req, res) => {
 
 // /api/user?search=piyush
 const allshipp = asyncHandler(async (req, res) => {
-  const alldata = await ShippingDetails.find();
+
+  try {
+    const alldata = await ShippingDetails.find();
+
+    res.json(alldata);
+  } catch (error) {
+    console.log(error)
+  }
   
-  res.json(alldata);
 });
 
 module.exports = { create, getShippingDetails, allshipp };
